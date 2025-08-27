@@ -13,6 +13,7 @@ services:
     build: ./docker/php
     volumes:
       - ./src:/var/www/
+    user: "${UID:-1000}:${GID:-1000}"
 
   mysql:
     image: mysql:8.0.26      # 以前8.0.43系のデータが残ってるなら 8.0.43 に上げるか data初期化
