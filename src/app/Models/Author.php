@@ -10,4 +10,14 @@ class Author extends Model
 	use HasFactory;
 
 	protected $fillable = ['name', 'age', 'nationality'];
+
+	public function book()
+	{
+		return $this->hasOne(\App\Models\Book::class);
+	}
+
+	public function getDetail(): string
+	{
+		return "ID:{$this->id} {$this->name}({$this->age}才) {$this->nationality}";
+	}
 }
