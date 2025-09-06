@@ -15,7 +15,7 @@ class Book extends Model
 
 	public function getTitle()
 	{
-		return 'ID' . $this->id . ':' . $this->title;
+		return 'ID' . $this->id . ':' . $this->title . ' 著者:' . optional($this->author)->name;
 	}
 
 	public function author()

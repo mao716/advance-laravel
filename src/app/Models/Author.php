@@ -16,6 +16,11 @@ class Author extends Model
 		return $this->hasOne(\App\Models\Book::class);
 	}
 
+	public function books()
+	{
+		return $this->hasMany(\App\Models\Book::class);
+	}
+
 	public function getDetail(): string
 	{
 		return "ID:{$this->id} {$this->name}({$this->age}才) {$this->nationality}";

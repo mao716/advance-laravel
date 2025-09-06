@@ -13,10 +13,10 @@ services:
     build: ./docker/php
     volumes:
       - ./src:/var/www/
-    user: "${UID:-1000}:${GID:-1000}"
+    user: "${MY_UID}:${MY_GID}"
     environment:
-      - UID=${UID:-1000}                 # （任意）中でも参照できるようにしておく
-      - GID=${GID:-1000}
+      - UID=${MY_UID}                 # （任意）中でも参照できるようにしておく
+      - GID=${MY_GID}
 
   mysql:
     image: mysql:8.0.26      # 以前8.0.43系のデータが残ってるなら 8.0.43 に上げるか data初期化
